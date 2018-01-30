@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<nav class="nav-extended wavaes light-blue">
+<nav class="nav-extended wavaes light-blue ">
     <div class="nav-wrapper container">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -50,25 +50,39 @@
 				<div class="row">
 					<div class="input-field col m12 s12">
 						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2">Name</label>
+						<label class="active" for="first_name2">First Name</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Last Name</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="username" required>
-						<label class="active" for="first_name2">Username</label>
+				
+          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">Address</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col m12 s12">
-						<input id="regnum" type="text" class="validate" name="regnum" required>
-						<label for="register number">Register Number</label>
+          <p>
+            <input name="group1" type="radio" id="test1" />
+             <label for="test1">Male</label>
+          </p>
+					<p>
+            <input name="group1" type="radio" id="test1" />
+             <label for="test1">Female</label>
+          </p>
+					
 					</div>
 				</div>
       <div class="row">
         <div class="input-field col m12 s12">
           <input id="password" type="password" class="validate" name="password" required>
-          <label for="password">Password</label>
+          <label for="password">Contact</label>
         </div>
       </div>
       <div class="row">
@@ -77,7 +91,38 @@
           <label for="email">Email</label>
         </div>
       </div>
-
+      <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Password</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Qualification</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Specialization</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+          <input type="text" class="timepicker validate" id="first_name" name=""required>
+						<label class="active" for="first_name2">Shift From</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+          <input type="text" class="timepicker validate"  id="first_name" name=""required>
+						<label class="active" for="first_name2">Shift To</label>
+					</div>
+				</div>
+        
+        
 	   <button class="btn waves-effect  purple darken-4" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
@@ -100,7 +145,17 @@
  $(document).ready(function() {
     Materialize.updateTextFields();
   });
-
+  $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
   </script>
 
 

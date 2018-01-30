@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<nav class="nav-extended wavaes light-blue">
+<nav class="nav-extended wavaes light-blue ">
     <div class="nav-wrapper container">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -41,6 +41,17 @@
       </ul>
     </div>
 </nav><br><br>
+<div class="row">
+    <div class="col m6 push-m3  s12 ">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Search Doctors</label>
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="row">
 
     
