@@ -41,10 +41,15 @@
       </ul>
     </div>
 </nav>
-<div class="row">
-<div class="row ">
-        <div class="col s12 m3 ">
-          <div class="card">
+<ul id="tabs-swipe-demo " class="tabs hide-on-large-only">
+    <li class="tab col s3"><a href="#profile" >Profile</a></li>
+    <li class="tab col s3"><a href="#history">History</a></li>
+   
+  </ul>
+<div class="row" >
+
+        <div class="col s12 m3"  id="profile">
+          <div class="card" >
             <div class="card-image">
               <img src="placeholder.png">
               <span class="card-title">Aditya V</span>
@@ -61,32 +66,28 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m6 ">
-        <ul class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">account_circle</i>
-      Dr Alex
-      <span class=" badge">MBBS</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">account_circle</i>
-      Dr John
-      <span class="badge">MD</span></div>
-    <div class="collapsible-body"><p><b>Address</b>:Crypstal Technologies </p>
-                                  <p><b>Gender</b>:Male</p>
-                                  <p><b>Qualification</b>:MBBS</p>
-                                  <p><b>Specialixation</b>:MBBS</p>
-                                  <p><b>Contact</b>: +95 67682232</p>
-                                  <p><b>e-mail</b> :adityavadityav@gmail.com</p> 
-                                    </div>
-  </li>
-</ul>
+        
+        <div class="col s12 m6 " id="hide">
+            <ul class="collapsible" data-collapsible="accordion" >
+            <li>
+                <div class="collapsible-header">
+                <i class="material-icons">account_circle</i>
+                    Medicine 2
+                <span class=" badge">12-2-18</span></div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                <i class="material-icons">account_circle</i>
+                Medicine 1
+                <span class=" badge">28-6-17</span></div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+
+            </ul>
         </div>
       </div>
-      </div>
+    </div>
       
             
 </div>
@@ -117,7 +118,10 @@
  $(document).ready(function() {
     Materialize.updateTextFields();
   });
-
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+  
   </script>
 
 
