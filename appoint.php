@@ -13,50 +13,56 @@
 
 </head>
 <body>
-<nav class="nav-extended wavaes light-blue ">
+<nav class="nav-extended wavaes light-blue">
     <div class="nav-wrapper container">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse">
         <i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li ><a href="add_doctor.php" >Add Doctor</a></li>
-        <li class="active"><a href="list_doctor.php">List Doctor's</a></li>
-        <li  ><a href="add_patient.php">Add Patient</a></li>
-		<li ><a href="list_patient.php">List Patient</a></li>
-        <li><a href="appointments.php">Appointments</a></li>
-      
-		<li><a href="pharmacies.php">Pharmacies</a></li>
-        <li><a href="#">Logout</a></li>
+      <li><a href="list_doctor.php">List Doctor's</a></li>
+      <li ><a href="add_patient.php">Add Patient</a></li>
+      <li ><a href="list_patient.php">List Patient</a></li>
+      <li  class="active"><a href="appointments.php">Appointments</a></li>
+    
+       <li><a href="pharmacies.php">Pharmacies</a></li>
+      <li><a href="#">Logout</a></li> 
       </ul>
       <ul class="side-nav flow-text" id="mobile-demo">
 
       <li ><a href="add_doctor.php" >Add Doctor</a></li>
-      <li  class="active"><a href="list_doctor.php">List Doctor's</a></li>
-      <li  ><a href="add_patient.php">Add Patient</a></li>
-      <li><a href="list_patient.php">List Patient</a></li>
-      <li><a href="appointments.php">Appointments</a></li>
+      <li><a href="list_doctor.php">List Doctor's</a></li>
+      <li ><a href="add_patient.php">Add Patient</a></li>
+      <li ><a href="list_patient.php">List Patient</a></li>
+      <li  class="active"><a href="appointments.php">Appointments</a></li>
     
-      <li><a href="pharmacies.php">Pharmacies</a></li>
+  <li><a href="pharmacies.php">Pharmacies</a></li>
       <li><a href="#">Logout</a></li>
       </ul>
     </div>
-</nav><br><br>
+</nav>
 <div class="row">
-    <div class="col m6 push-m3  s12 ">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">search</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Search Doctors</label>
+<div class="row ">
+        <div class="col s12 m3 ">
+          <div class="card">
+            <div class="card-image">
+              <img src="placeholder.png">
+              <span class="card-title">Aditya V</span>
+            </div>
+            <div class="card-content">
+              <p><b>Address:</b></p>
+              <p><b>Age:</b></p>
+              <p><b>Contact:</b></p>
+              <p><b>Email:</b></p>
+              <p><b>Blood Group:</b></p>
+            </div>
+            <div class="card-action">
+              <a href="#">Edit Profile</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-<div class="row">
-
-    
-	<div class="col m6 push-m3  s12 ">
-    <ul class="collapsible" data-collapsible="accordion">
+        <div class="col s12 m6 ">
+        <ul class="collapsible" data-collapsible="accordion">
   <li>
     <div class="collapsible-header">
       <i class="material-icons">account_circle</i>
@@ -78,11 +84,26 @@
                                     </div>
   </li>
 </ul>
-    </div>
-  </div>
+        </div>
+      </div>
+      </div>
+      
+            
+</div>
 
 
-    
+
+<div class="fixed-action-btn toolbar ">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="tel:+900300400"><i class="material-icons">call</i></a></li>
+      <li class="waves-effect waves-light"><a href="sms:+900300400"><i class="material-icons">sms</i></a></li>
+      <li class="waves-effect waves-light active"><a href="#!"><i class="material-icons ">email</i></a></li>
+      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>   
 </body>
 <!--<div class="footer-copyright">
             <div class="container">

@@ -50,21 +50,53 @@
 				<div class="row">
 					<div class="input-field col m12 s12">
 						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2">Name</label>
+						<label class="active" for="first_name2"> First Name</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Last Name</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Age</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Address</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<label class="active" for="first_name2">Contact</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col m12 s12">
+          <p>
+            <input name="group1" type="radio" id="test1" />
+             <label for="test1">Male</label>
+          </p>
+					<p>
+            <input name="group1" type="radio" id="test1" />
+             <label for="test1">Female</label>
+          </p>
+					
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col m12 s12">
 						<input value="" id="first_name" type="text" class="validate" name="username" required>
-						<label class="active" for="first_name2">Username</label>
+						<label class="active" for="first_name2">Blood group</label>
 					</div>
 				</div>
-				<div class="row">
-					<div class="input-field col m12 s12">
-						<input id="regnum" type="text" class="validate" name="regnum" required>
-						<label for="register number">Register Number</label>
-					</div>
-				</div>
+			
       <div class="row">
         <div class="input-field col m12 s12">
           <input id="password" type="password" class="validate" name="password" required>
