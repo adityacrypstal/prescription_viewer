@@ -13,30 +13,26 @@
 
 </head>
 <body>
-<nav class="nav-extended wavaes light-blue">
+<nav class="nav-extended wavaes light-blue ">
     <div class="nav-wrapper container">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse">
         <i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li ><a href="add_doctor.php" >Add Doctor</a></li>
-        <li><a href="list_doctor.php">List Doctor's</a></li>
-        <li  ><a href="add_patient.php">Add Patient</a></li>
-		    <li><a href="list_patient.php">List Patient</a></li>
-        <li class="active"><a href="appointments.php">Appointments</a></li>
-      <li><a href="pharmacies.php">Pharmacies</a></li>
-        <li><a href="#">Logout</a></li>
+     
+      <li><a href="home.php">Home</a></li>
+      <li ><a href="pharmacies.php">List Pharmacies</a></li>
+      <li class="active"><a href="list_patient.php">Profile</a></li>
+      <li><a href="appointments.php">Logout</a></li>
+
       </ul>
       <ul class="side-nav flow-text" id="mobile-demo">
 
-      <li ><a href="add_doctor.php" >Add Doctor</a></li>
-      <li><a href="list_doctor.php">List Doctor's</a></li>
-      <li  ><a href="add_patient.php">Add Patient</a></li>
-      <li ><a href="list_patient.php">List Patient</a></li>
-      <li class="active"><a href="appointments.php">Appointments</a></li>
-    
-      <li><a href="pharmacies.php">Pharmacies</a></li>
+      <li><a href="home.php">Home</a></li>
+      <li  ><a href="pharmacies.php">Pharmacies</a></li>
+      <li class="active"><a href="list_patient.php">Profile</a></li>
       <li><a href="#">Logout</a></li>
+  
       </ul>
     </div>
 </nav><br><br>
