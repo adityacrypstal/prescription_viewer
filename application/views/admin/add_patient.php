@@ -1,50 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Prescription Viewer</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-
-
-</head>
-<body>
-<nav class="nav-extended wavaes light-blue">
-    <div class="nav-wrapper container">
-      
-      <a href="#" data-activates="mobile-demo" class="button-collapse">
-        <i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li ><a href="add_doctor.php" >Add Doctor</a></li>
-      <li><a href="list_doctor.php">List Doctor's</a></li>
-      <li class="active" ><a href="add_patient.php">Add Patient</a></li>
-      <li ><a href="list_patient.php">List Patient</a></li>
-      <li><a href="appointments.php">Appointments</a></li>
-    
-       <li><a href="pharmacies.php">Pharmacies</a></li>
-      <li><a href="#">Logout</a></li> 
-      </ul>
-      <ul class="side-nav flow-text" id="mobile-demo">
-
-      <li ><a href="add_doctor.php" >Add Doctor</a></li>
-      <li><a href="list_doctor.php">List Doctor's</a></li>
-      <li  class="active"><a href="add_patient.php">Add Patient</a></li>
-      <li ><a href="list_patient.php">List Patient</a></li>
-      <li><a href="appointments.php">Appointments</a></li>
-    
-  <li><a href="pharmacies.php">Pharmacies</a></li>
-      <li><a href="#">Logout</a></li>
-      </ul>
-    </div>
-</nav><br><br>
 <div class="row">
 
     
-	<div class="col m6 push-m2  s12 ">
+	<div class="col m6 push-m3  s12 ">
 	<h4 class="center-align flow-text">Add Patient</h4><hr><br>
 			<form class="col m12 s12" action="" method="post">
 				<div class="row">

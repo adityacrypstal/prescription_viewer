@@ -28,14 +28,14 @@
     		<div class="col s12 l5 offset-l3">
      			<div class="card">
         			<div class="card-image">
-        				 <img src="back.jpg">
+        				 <img src="<?=base_url('assets/back.jpg')?>">
         					<span class="card-title">Login</span>
         						  <a class="btn-floating halfway-fab waves-effect waves-light blue" href="#">
         						  	<i class="material-icons">person_add</i></a>
        					 </div>
 
        					 <div class="card-content">
-       					   <p><form class="myForm" action="" method="post">
+       					   <p><form class="myForm" action="<?=base_url('index.php/Admin/login')?>" method="post">
       								<div class="row">
       								  <div class="input-field ">
      								     <i class="material-icons prefix">account_circle</i>
@@ -65,6 +65,9 @@
 </body><script>
   $(document).ready(function() {
     Materialize.updateTextFields();
+	});</script>
+	<script>$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
   });</script>
 <!--<div class="footer-copyright">
             <div class="container">
