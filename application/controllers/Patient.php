@@ -18,13 +18,23 @@ class Patient extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-		public function index($page = 'index'){
-			if(!file_exists(APPPATH.'views/patient/'.$page.'.php')){
-				show_404();
-				}
-			else{$this->load->view('admin/'.$page);}
-				
+    public function view($page ='add_patient'){
+        if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+            show_404();
+            }
+        else{
+            if(null !==($this->session->userdata('username'))){
+                $this->load->view('admin/header');
+                $this->load->view('admin/'.$page);
+            }else{
+                
+                $this->load->view('admin/index');
+                
+            }
+            
+        }
+            
 
-		}
+    }
 	
 }

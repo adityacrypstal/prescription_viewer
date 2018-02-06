@@ -48,7 +48,7 @@ class Admin extends CI_Controller {
 
 			}elseif($pharma!=NULL){
 				foreach($pharma as $pharmas){
-					$username= $admins['username'];
+					$username= $pharmas['username'];
 				}
 				$this->session->set_userdata(array('username'=>$username));
 				redirect('Pharma/view/');

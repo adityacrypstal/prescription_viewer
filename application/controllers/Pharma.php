@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Patient extends CI_Controller {
+class Pharma extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,13 +18,23 @@ class Patient extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-		public function index($page = 'index'){
-			if(!file_exists(APPPATH.'views/pharma/'.$page.'.php')){
-				show_404();
-				}
-			else{$this->load->view('admin/'.$page);}
-				
+    public function view($page ='index'){
+        if(!file_exists(APPPATH.'views/admin/pharma/'.$page.'.php')){
+            show_404();
+            }
+        else{
+            if(null !==($this->session->userdata('username'))){
+                $this->load->view('admin/pharma/header');
+                $this->load->view('admin/pharma/'.$page);
+            }else{
+                
+                $this->load->view('admin/index');
+                
+            }
+            
+        }
+            
 
-		}
+    }
 	
 }
