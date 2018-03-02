@@ -1,15 +1,13 @@
 
-<h5 class="center-align">Appointments</h5><br>
+<h5 class="center-align">Select Patient</h5><br>
 <div class="row">
 
     
 	<div class="col m6 push-m3  s12 ">
  <ul class="collection with-header">
-       
-        <li class="collection-item"><div>Alvin<a href="appoint.php" class="secondary-content"><i class="material-icons">add</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="appoint.php" class="secondary-content"><i class="material-icons">add</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="appoint.php" class="secondary-content"><i class="material-icons">add</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="appoint.php" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+ <?php foreach($patients as $patient):?>
+        <li class="collection-item"><div><?=$patient['fname']?><a href="<?=base_url('index.php/Admin/view/appoint/'.$patient['fname'].'')?>"  class="secondary-content"><i class="material-icons">add</i></a></div></li>
+<?php endforeach;?>    
       </ul>
     </div>
   </div>
@@ -30,6 +28,13 @@
     Materialize.updateTextFields();
   });
 
+  </script>
+  <script>
+    function popout(url){
+      newwindow=window.open(url,'Appoint','height=200','width=150');
+      if (window.focus){newwindow.focus()}
+      return false;
+    }
   </script>
 
 

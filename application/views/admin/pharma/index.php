@@ -14,23 +14,43 @@
           </tr>
 
         </thead>
+        
+
+<!-- Modal Structure -->
 
         <tbody>
           
-            <tr>
-              <td>0043</td>
-              <td>Aditya</td>
-              <td>Samuel</td>
-              <td>31-1-18</td>
+           <?php foreach($list_medic as $list):?>
+      
+           <tr>
+              <td><?=$list['Id']?></td>
+              <td>      <a  class="modal-trigger" href="#modal1"><?=$list['Patient']?></a></td>
+              <td><?=$list['Doctor']?></td>
+              <td><?=$list['Time']?></td>
               <td>
                       <a class="btn btn-floating btn-small cyan pulse" href="#" target="_blank"><i class="material-icons">edit</i></a>
+                      <a class="btn btn-floating btn-small cyan pulse" href="<?=base_url('index.php/Pharma/not_available/'.$list['Id'].'')?>" ><i class="material-icons">mail</i></a>
 
               </td>
-              <form action="#"  method="post">
-              <td><button class="btn btn-floating btn-small cyan pulse"  name="qstnId" value=""><i class="material-icons">close</i></a></td>
+              <form action="<?=base_url('index.php/Pharma/Remove_med/')?>"  method="post">
+              <td><button class="btn btn-floating btn-small cyan pulse"  name="med_id" value="<?=$list['Id'];?>"><i class="material-icons">close</i></a></td>
               </form>
             </tr>
-           
+            
+            <div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4><?=$list['Patient']?></h4><hr>
+    <h5>Medicine</h5>
+    <p><?=$list['Medicine']?></p>
+    <p><?=$list['Dosage']?></p>
+    <p><?=$list['Volume']?></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Not Available</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Shipped</a>
+  </div>
+</div>
+<?php endforeach;?>
         </tbody>
       </table>
 
@@ -48,6 +68,10 @@
    $(".button-collapse").sideNav();
  $(document).ready(function() {
     Materialize.updateTextFields();
+  });
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
   });
   $('.timepicker').pickatime({
     default: 'now', // Set default time: 'now', '1:30AM', '16:30'

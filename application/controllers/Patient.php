@@ -18,14 +18,21 @@ class Patient extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-    public function view($page ='add_patient'){
-        if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+    public function view($page ='index'){
+        if(!file_exists(APPPATH.'views/admin/patient/'.$page.'.php')){
             show_404();
             }
         else{
             if(null !==($this->session->userdata('username'))){
-                $this->load->view('admin/header');
-                $this->load->view('admin/'.$page);
+				$data['username']=$this->session->userdata('username');
+				$data['presc']=$this->PV->get_my_presc($data);
+				$data['username']=$this->session->userdata('username');
+				$data['patients']=$this->PV->get_patient_model();
+				$data['doctors']=$this->PV->get_doctor_model();
+				$data['pharmas']=$this->PV->get_pharma();
+				$data['profiles']=$this->PV->get_profile($data);
+                $this->load->view('admin/patient/header');
+                $this->load->view('admin/patient/'.$page,$data);
             }else{
                 
                 $this->load->view('admin/index');
@@ -35,6 +42,26 @@ class Patient extends CI_Controller {
         }
             
 
-    }
-	
+	}
+	public function edit_profile(){
+		if(NULL!=$_POST['password']){
+			$data['password']=$_POST['password'];
+		} if(NULL!=$_POST['contact'])
+		{
+			$data['contact']=$_POST['contact'];
+		}
+		$this->db->where('username', $this->session->userdata('username'));
+		$this->db->update('patient', $data); 
+		redirect('Patient/view/profile');
+	}
+	public function Select(){
+		$patient=$this->uri->segment(3);
+		redirect('/Patient/view/select_pharma/'.$patient);
+	}
+	public function Order(){
+		$data['medicin']=$this->uri->segment(3);
+		$data['pharma']=$this->uri->segment(4);
+		$this->PV->set_pharma($data);
+
+	}
 }

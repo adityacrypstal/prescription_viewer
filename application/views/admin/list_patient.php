@@ -15,20 +15,23 @@
     
 	<div class="col m6 push-m3  s12 ">
     <ul class="collapsible" data-collapsible="accordion">
+  
+  <?php foreach($patients as $patient):?>
   <li>
     <div class="collapsible-header">
       <i class="material-icons">account_circle</i>
-      Mr Alex
-      <span class=" badge">Age 18</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     <?=$patient['fname'].' '.$patient['lname']?>
+      <span class="badge"><?=$patient['age']?></span></div>
+    <div class="collapsible-body">
+          <p><b>Blood </b>:<?=$patient['blood']?><br>
+          <b>Sex </b>:<?=$patient['sex']?><br>
+          <b>Address </b>:<?=$patient['address']?><br>
+          <b>Contact </b>:<?=$patient['contact']?><br>
+          <b>Email</b>:<?=$patient['email']?></p>
+          
+    </div>
   </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">account_circle</i>
-      Mr John
-      <span class="badge">Age 29</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
+<?php endforeach;?>
 </ul>
     </div>
   </div>

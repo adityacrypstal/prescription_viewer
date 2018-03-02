@@ -70,8 +70,11 @@ class Admin extends CI_Controller {
 				}
 			else{
 				if(null !==($this->session->userdata('username'))){
+					$data['patients']=$this->PV->get_patient_model();
+					$data['doctors']=$this->PV->get_doctor_model();
+					$data['pharmas']=$this->PV->get_pharma();
 					$this->load->view('admin/header');
-					$this->load->view('admin/'.$page);
+					$this->load->view('admin/'.$page,$data);
 				}else{
 					
 					$this->load->view('admin/index');
@@ -88,5 +91,30 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/toast');
 			
 		}
-	
+		public function add_patient(){
+			$this->load->database();
+			$this->db->insert('patient',$_POST);
+			redirect('Admin/view/add_patient');
+		}
+		public function add_doctor(){
+			$this->load->database();
+			$this->db->insert('doctor',$_POST);
+			redirect('Admin/view/add_doctor');
+		}
+		public function signup(){
+			$this->load->view('admin/signup');
+			
+		}
+		public function appoint(){
+			$data['patient']=$this->uri->segment(3);
+			$data['doctor']=$this->uri->segment(4);
+			$this->db->insert('appoints',$data);
+			redirect('Admin/view/appointments');
+		}
+		public function add_pharma(){
+			$this->load->database();
+			$this->db->insert('pharma',$_POST);
+			redirect('Admin/view/index');
+		}
+			
 }

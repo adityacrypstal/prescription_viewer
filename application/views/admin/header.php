@@ -19,7 +19,7 @@
       $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
       $uri_segments = explode('/', $uri_path);
       $page= $uri_segments[6];
-      if($page==NULL){  $page='add_doctor';}?>
+      if($page==NULL){  $page='add_patient';}?>
       <a href="#" data-activates="mobile-demo" class="button-collapse">
         <i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -27,7 +27,7 @@
       <li class="<?php echo ($page == "list_doctor" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_doctor')?>">List Doctor's</a></li>
       <li class="<?php echo ($page == "add_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/add_patient')?>">Add Patient</a></li>
       <li class="<?php echo ($page == "list_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_patient')?>">List Patient</a></li>
-      <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appointments</a></li>
+      <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appoint</a></li>
       <li class="<?php echo ($page == "pharmacies" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/pharmacies')?>">Pharmacies</a></li>
       <li ><a href="<?=base_url('index.php/Admin/logout')?>">Logout</a></li> 
       </ul>
@@ -37,7 +37,7 @@
       <li class="<?php echo ($page == "list_doctor" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_doctor')?>">List Doctor's</a></li>
       <li class="<?php echo ($page == "add_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/add_patient')?>">Add Patient</a></li>
       <li class="<?php echo ($page == "list_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_patient')?>">List Patient</a></li>
-      <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appointments</a></li>
+      <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appoint</a></li>
       <li class="<?php echo ($page == "pharmacies" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/pharmacies')?>">Pharmacies</a></li>
       <li ><a href="<?=base_url('index.php/Admin/logout')?>">Logout</a></li> 
       </ul>

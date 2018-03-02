@@ -15,26 +15,22 @@
     
 	<div class="col m6 push-m3  s12 ">
     <ul class="collapsible" data-collapsible="accordion">
+  
+  <?php foreach($doctors as $doctor):?>
   <li>
     <div class="collapsible-header">
       <i class="material-icons">account_circle</i>
-      Dr Alex
-      <span class=" badge">MBBS</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">account_circle</i>
-      Dr John
-      <span class="badge">MD</span></div>
-    <div class="collapsible-body"><p><b>Address</b>:Crypstal Technologies </p>
-                                  <p><b>Gender</b>:Male</p>
-                                  <p><b>Qualification</b>:MBBS</p>
-                                  <p><b>Specialixation</b>:MBBS</p>
-                                  <p><b>Contact</b>: +95 67682232</p>
-                                  <p><b>e-mail</b> :adityavadityav@gmail.com</p> 
+      <?=$doctor['fname']?>
+      <span class="badge"><?=$doctor['specialization']?></span></div>
+    <div class="collapsible-body"><p><b>Address</b>:<?=$doctor['address']?><br>
+                                  <b>Gender</b>:<?=$doctor['sex']?><br>
+                                  <b>Qualification</b>:<?=$doctor['qualification']?><br>
+                                  <b>Specialixation</b>:<?=$doctor['specialization']?><br>
+                                  <b>Contact</b>:<?=$doctor['contact']?><br>
+                                  <b>e-mail</b> :<?=$doctor['email']?></p> 
                                     </div>
   </li>
+<?php endforeach;?>
 </ul>
     </div>
   </div>

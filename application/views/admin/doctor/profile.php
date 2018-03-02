@@ -1,58 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Prescription Viewer</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-
-
-</head>
-<body>
-<nav class="nav-extended wavaes light-blue ">
-    <div class="nav-wrapper container">
-      
-      <a href="#" data-activates="mobile-demo" class="button-collapse">
-        <i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-     
-      <li><a href="home.php">Home</a></li>
-      <li ><a href="pharmacies.php">List Pharmacies</a></li>
-      <li class="active"><a href="list_patient.php">Profile</a></li>
-      <li><a href="appointments.php">Logout</a></li>
-
-      </ul>
-      <ul class="side-nav flow-text" id="mobile-demo">
-
-      <li><a href="home.php">Home</a></li>
-      <li  ><a href="pharmacies.php">Pharmacies</a></li>
-      <li class="active"><a href="list_patient.php">Profile</a></li>
-      <li><a href="#">Logout</a></li>
-  
-      </ul>
-    </div>
-</nav><br><br>
 <div class="row">
 <div class="col s12 m4 offset-m4"  >
 <div class="card" >
+  <?php foreach($profiles as $profile):?>
   <div class="card-image">
-    <img src="../placeholder.png">
-    <span class="card-title">Aditya V</span>
+    <img src="<?=base_url('assets/placeholder.png')?>">
+    <span class="card-title"><?=$profile['fname'].' '.$profile['lname']?></span>
   </div>
   <div class="card-content">
-    <p><b>Address:</b></p>
-    <p><b>Age:</b></p>
-    <p><b>Contact:</b></p>
-    <p><b>Email:</b></p>
-    <p><b>Blood Group:</b></p>
+    <p><b>Address: </b><?=$profile['address']?></p><br>
+    <p><b>Age: </b><?=$profile['username']?></p><br>
+    <p><b>Contact: </b><?=$profile['contact']?></p><br>
+    <p><b>Email: </b><?=$profile['email']?></p><br>
+   
+    <p><b>Qualification: </b><?=$profile['qualification']?></p><br>
+    <p><b>Specialization: </b><?=$profile['specialization']?></p><br>
+    <p><b>Shift: </b><?//=date_format($profile['s_from'],'g:i A').' '.$profile['s_to']?></p>
   </div>
   <div class="card-action">
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Edit Profile</a>
   </div>
+  <?php endforeach;?>
 </div>
 </div>
 </div>
@@ -62,76 +30,46 @@
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
      
-    <form class="col m12 s12" action="" method="post">
-				<div class="row">
-					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2"> First Name</label>
-					</div>
-				</div>
+    <form class="col m12 s12" action="<?=base_url('index.php/Doctor/edit_profile_doctor')?>" method="post">
+				
         <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2">Last Name</label>
-					</div>
-				</div>
-        <div class="row">
-					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2">Age</label>
-					</div>
-				</div>
-        <div class="row">
-					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
-						<label class="active" for="first_name2">Address</label>
-					</div>
-				</div>
-        <div class="row">
-					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<input value="" id="first_name" type="text" class="validate" name="contact" >
 						<label class="active" for="first_name2">Contact</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-          <p>
-            <input name="group1" type="radio" id="test1" />
-             <label for="test1">Male</label>
-          </p>
-					<p>
-            <input name="group1" type="radio" id="test1" />
-             <label for="test1">Female</label>
-          </p>
-					
-		</div>
-		</div>
-		<div class="row">
-			<div class="input-field col m12 s12">
-				<input value="" id="first_name" type="text" class="validate" name="username" required>
-				<label class="active" for="first_name2">Blood group</label>
-			</div>
-		</div>
-			
+						<input value="" id="first_name" type="text" class="validate" name="specialization" >
+						<label class="active" for="first_name2">Specialisation</label>
+					</div>
+				</div>
+        <div class="row">
+        <div class="input-field col m12 s12">
+        <input type="text" class="timepicker validate" id="first_name" name="s_from">
+          <label class="active" for="first_name2">Shift From</label>
+        </div>
+      </div>
       <div class="row">
         <div class="input-field col m12 s12">
-          <input id="password" type="password" class="validate" name="password" required>
+        <input type="text" class="timepicker validate"  id="first_name" name="s_to">
+          <label class="active" for="first_name2">Shift To</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m12 s12">
+          <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col m12 s12">
-          <input id="email" type="email" class="validate" name="email" required>
-          <label for="email">Email</label>
-        </div>
-      </div>
+      <button class="btn waves-effect  purple darken-4" type="submit" action="submit">Submit
+<i class="material-icons right">send</i>
+</button>
 
 	  
 </form> 
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Save</a>
-    </div>
+    
   </div>
 </body>
 <!--<div class="footer-copyright">
@@ -149,6 +87,21 @@
   $(document).ready(function(){
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+  });
+  $(".button-collapse").sideNav();
+ $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
+  $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
   });
   </script>
 

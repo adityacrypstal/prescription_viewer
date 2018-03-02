@@ -24,8 +24,15 @@ class Pharma extends CI_Controller {
             }
         else{
             if(null !==($this->session->userdata('username'))){
+				
+				$data['username']=$this->session->userdata('username');
+				$data['list_medic']=$this->PV->get_med_list($data);
+				$data['patients']=$this->PV->get_patient_model();
+				$data['doctors']=$this->PV->get_doctor_model();
+				$data['pharmas']=$this->PV->get_pharma();
+				$data['profiles']=$this->PV->get_profile_pharma($data);
                 $this->load->view('admin/pharma/header');
-                $this->load->view('admin/pharma/'.$page);
+                $this->load->view('admin/pharma/'.$page,$data);
             }else{
                 
                 $this->load->view('admin/index');
@@ -35,6 +42,29 @@ class Pharma extends CI_Controller {
         }
             
 
-    }
+	}
+	public function edit_profile(){
+		if(NULL!=$_POST['password']){
+			$data['password']=$_POST['password'];
+		} if(NULL!=$_POST['contact'])
+		{
+			$data['contact']=$_POST['contact'];
+		}
+		$this->db->where('username', $this->session->userdata('username'));
+		$this->db->update('pharma', $data); 
+		redirect('Pharma/view/profile');
+	}
+	public function Remove_med(){
+		$data['Id']=$_POST['med_id'];
+		$this->db->select('*');
+		$this->db->where('Id',$data['Id']);
+		$this->db->delete('prescription');
+		redirect('Pharma/view/index');
+	}
+	public function not_available(){
+	$data['Id']=$this->uri->segment(3);
+	$this->PV->not_available($data);
+
+	}
 	
 }

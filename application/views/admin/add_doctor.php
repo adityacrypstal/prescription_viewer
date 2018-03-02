@@ -4,7 +4,7 @@
     
 	<div class="col m6 push-m3  s12 ">
 	<h4 class="center-align flow-text">Add Doctor</h4><hr><br>
-			<form class="col m12 s12" action="" method="post">
+			<form class="col m12 s12" action="<?=base_url('index.php/Admin/add_doctor')?>" method="post">
 				<div class="row">
 					<div class="input-field col m12 s12">
 						<input value="" id="first_name" type="text" class="validate" name="fname" required>
@@ -13,25 +13,25 @@
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<input value="" id="first_name" type="text" class="validate" name="lname" required>
 						<label class="active" for="first_name2">Last Name</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col m12 s12">
 				
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <textarea id="icon_prefix2" class="materialize-textarea" name="address"></textarea>
           <label for="icon_prefix2">Address</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col m12 s12">
           <p>
-            <input name="group1" type="radio" id="test1" />
+            <input name="sex" type="radio" id="test1" />
              <label for="test1">Male</label>
           </p>
 					<p>
-            <input name="group1" type="radio" id="test1" />
+            <input name="sex" type="radio" id="test1" />
              <label for="test1">Female</label>
           </p>
 					
@@ -39,7 +39,7 @@
 				</div>
       <div class="row">
         <div class="input-field col m12 s12">
-          <input id="password" type="password" class="validate" name="password" required>
+          <input id="password" type="password" class="validate" name="contact" required>
           <label for="password">Contact</label>
         </div>
       </div>
@@ -51,37 +51,43 @@
       </div>
       <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<input value="" id="first_name" type="text" class="validate" name="username" required>
+						<label class="active" for="first_name2">IUsername</label>
+					</div>
+				</div>
+      <div class="row">
+					<div class="input-field col m12 s12">
+						<input value="" id="first_name" type="text" class="validate" name="password" required>
 						<label class="active" for="first_name2">Password</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<input value="" id="first_name" type="text" class="validate" name="qualification" required>
 						<label class="active" for="first_name2">Qualification</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="fname" required>
+						<input value="" id="first_name" type="text" class="validate" name="specialization" required>
 						<label class="active" for="first_name2">Specialization</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-          <input type="text" class="timepicker validate" id="first_name" name=""required>
+          <input type="text" class="timepicker validate" id="first_name" name="s_from"required>
 						<label class="active" for="first_name2">Shift From</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col m12 s12">
-          <input type="text" class="timepicker validate"  id="first_name" name=""required>
+          <input type="text" class="timepicker validate"  id="first_name" name="s_to"required>
 						<label class="active" for="first_name2">Shift To</label>
 					</div>
 				</div>
         
         
-	   <button class="btn waves-effect  purple darken-4" type="submit" name="action">Submit
+	   <button class="btn waves-effect  purple darken-4" type="submit" action="submit">Submit
     <i class="material-icons right">send</i>
   </button>
     </form>

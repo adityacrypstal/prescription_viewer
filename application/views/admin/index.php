@@ -30,7 +30,7 @@
         			<div class="card-image">
         				 <img src="<?=base_url('assets/back.jpg')?>">
         					<span class="card-title">Login</span>
-        						  <a class="btn-floating halfway-fab waves-effect waves-light blue" href="#">
+        						  <a class="btn-floating halfway-fab waves-effect waves-light blue" href="<?=base_url('index.php/Admin/signup')?>">
         						  	<i class="material-icons">person_add</i></a>
        					 </div>
 

@@ -1,68 +1,23 @@
+<?php 
+      $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+      $uri_segments = explode('/', $uri_path);
+      $page= $uri_segments[7];
+     ?>
+<h5 class="center-align">Select Doctor</h5><br><p class="center-align">Patient Name:<?=$page?></p >
+<div class="row">
 
-<ul id="tabs-swipe-demo " class="tabs hide-on-large-only">
-    <li class="tab col s3"><a href="#profile" >Profile</a></li>
-    <li class="tab col s3"><a href="#history">History</a></li>
-   
-  </ul>
-<div class="row" >
-
-        <div class="col s12 m3"  id="profile">
-          <div class="card" >
-            <div class="card-image">
-              <img src="placeholder.png">
-              <span class="card-title">Aditya V</span>
-            </div>
-            <div class="card-content">
-              <p><b>Address:</b></p>
-              <p><b>Age:</b></p>
-              <p><b>Contact:</b></p>
-              <p><b>Email:</b></p>
-              <p><b>Blood Group:</b></p>
-            </div>
-            <div class="card-action">
-              <a href="#">Edit Profile</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col s12 m6 " id="hide">
-            <ul class="collapsible" data-collapsible="accordion" >
-            <li>
-                <div class="collapsible-header">
-                <i class="material-icons">account_circle</i>
-                    Medicine 2
-                <span class=" badge">12-2-18</span></div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-                <div class="collapsible-header">
-                <i class="material-icons">account_circle</i>
-                Medicine 1
-                <span class=" badge">28-6-17</span></div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-
-            </ul>
-        </div>
-      </div>
+    
+	<div class="col m6 push-m3  s12 ">
+ <ul class="collection with-header">
+ <?php foreach($doctors as $doctor):?>
+        <li class="collection-item"><div><?=$doctor['fname']?><a href="<?=base_url('index.php/Admin/appoint/'.$page.'/'.$doctor['fname'].'')?>" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+<?php endforeach;?>    
+      </ul>
     </div>
-      
-            
-</div>
+  </div>
 
 
-
-<div class="fixed-action-btn toolbar ">
-    <a class="btn-floating btn-large red">
-      <i class="large material-icons">add</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="tel:+900300400"><i class="material-icons">call</i></a></li>
-      <li class="waves-effect waves-light"><a href="sms:+900300400"><i class="material-icons">sms</i></a></li>
-      <li class="waves-effect waves-light active"><a href="#!"><i class="material-icons ">email</i></a></li>
-      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>   
+    
 </body>
 <!--<div class="footer-copyright">
             <div class="container">
@@ -76,10 +31,14 @@
  $(document).ready(function() {
     Materialize.updateTextFields();
   });
-  $(document).ready(function(){
-    $('ul.tabs').tabs();
-  });
-  
+
+  </script>
+  <script>
+    function popout(url){
+      newwindow=window.open(url,'Appoint','height=200','width=150');
+      if (window.focus){newwindow.focus()}
+      return false;
+    }
   </script>
 
 
