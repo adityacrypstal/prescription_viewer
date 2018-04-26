@@ -15,7 +15,7 @@
    
     <p><b>Qualification: </b><?=$profile['qualification']?></p><br>
     <p><b>Specialization: </b><?=$profile['specialization']?></p><br>
-    <p><b>Shift: </b><?//=date_format($profile['s_from'],'g:i A').' '.$profile['s_to']?></p>
+    <p><b>Shift : </b><?=date('h:i',strtotime($profile['s_from'])).' To '.date('h:i',strtotime($profile['s_to']))?></p>
   </div>
   <div class="card-action">
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Edit Profile</a>

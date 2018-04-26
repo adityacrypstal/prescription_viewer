@@ -94,12 +94,35 @@ class Admin extends CI_Controller {
 		public function add_patient(){
 			$this->load->database();
 			$this->db->insert('patient',$_POST);
-			redirect('Admin/view/add_patient');
+			$this->db->trans_complete();
+			$Id = $this->db->insert_id();
+			echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Patient added sucessfully.Patient Id is ".$Id." ');
+    							window.location.href='view/add_patient';
+   					 </script>");
+	
+			
+			
 		}
 		public function add_doctor(){
 			$this->load->database();
 			$this->db->insert('doctor',$_POST);
-			redirect('Admin/view/add_doctor');
+			echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Doctor added sucessfully!');
+    							window.location.href='view/add_doctor';
+   					 </script>");
+		}
+		public function liveSearch(){
+			$search = $this->input->get('id');
+  			$result = $this->PV->getPerson($search);
+  			echo json_encode ($result);
+ 			
+		}
+		public function pharmaSearch(){
+			$search = $this->input->get('id');
+  			$result = $this->PV->getPharmaLive($search);
+  			echo json_encode ($result);
+ 			
 		}
 		public function signup(){
 			$this->load->view('admin/signup');

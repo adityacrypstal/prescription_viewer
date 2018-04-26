@@ -51,6 +51,9 @@ class Doctor extends CI_Controller {
 		}
 		public function prescribe(){
 			$this->db->insert('prescription',$_POST);
+			$patient=$this->input->post('Patient');
+			$this->db->where('Patient', $patient);
+      		$this->db->delete('appoints'); 
 			redirect('Doctor/view/prescribe');
 		}
 		public function edit_profile_doctor(){

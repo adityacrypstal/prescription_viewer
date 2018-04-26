@@ -29,7 +29,9 @@
            <input type="text" name="Dosage" placeholder="Dosage in Days">
            <input type="text" name="Volume" placeholder="Quantity">
            <input type="text" name="Patient" value="<?=$app['fname']?>" hidden>
+           <input type="text" name="Time" value="<?=date('m/d/Y h:i:s a', time());?>" hidden>
            <input type="text" name="Doctor" value="<?=$_SESSION['username']?>" hidden>
+           
 
            <button class="btn waves-effect  purple darken-3" type="submit" action="submit">Submit
              <i class="material-icons right">send</i>
@@ -44,7 +46,7 @@
                 <div class="collapsible-header">
                 <i class="material-icons">account_circle</i>
                 <?=$medicine['Medicine']?>
-                <span class=" badge"><?=$medicine['Time']?></span></div>
+                <span class=" badge"><?=date('m/d/Y h:i:s',strtotime($medicine['Time']))?></span></div>
                 <div class="collapsible-body">
                 <p style="text-transform:uppercase;"><b>Doctor :- </b><?=$medicine['Doctor']?></p>
                 <p style="text-transform:uppercase;"><b>Dosage :- </b><?=$medicine['Dosage']?>Days</p>

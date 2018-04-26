@@ -24,22 +24,18 @@
           <label for="icon_prefix2">Address</label>
 					</div>
 				</div>
-				<div class="row">
-					<div class="input-field col m12 s12">
-          <p>
-            <input name="sex" type="radio" id="test1" />
-             <label for="test1">Male</label>
-          </p>
-					<p>
-            <input name="sex" type="radio" id="test1" />
-             <label for="test1">Female</label>
-          </p>
-					
-					</div>
-				</div>
+				<p>
+					<input name= "sex" type="radio" id="male"  />
+					<label for="male">Male</label>
+				</p>
+				<p>
+					<input name="sex" type="radio" id="female" />
+					<label for="female">Female</label>
+				</p>
+				<br>
       <div class="row">
         <div class="input-field col m12 s12">
-          <input id="password" type="password" class="validate" name="contact" required>
+          <input id="password" type="number" class="validate" name="contact" required>
           <label for="password">Contact</label>
         </div>
       </div>
@@ -52,12 +48,12 @@
       <div class="row">
 					<div class="input-field col m12 s12">
 						<input value="" id="first_name" type="text" class="validate" name="username" required>
-						<label class="active" for="first_name2">IUsername</label>
+						<label class="active" for="first_name2">Username</label>
 					</div>
 				</div>
       <div class="row">
 					<div class="input-field col m12 s12">
-						<input value="" id="first_name" type="text" class="validate" name="password" required>
+						<input value="" id="first_name" type="password" class="validate" name="password" required>
 						<label class="active" for="first_name2">Password</label>
 					</div>
 				</div>
@@ -121,6 +117,12 @@
     aftershow: function(){} //Function for after opening timepicker
   });
   </script>
-
+<script>
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+	});</script>
+	<script>$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });</script>
 
 </html>

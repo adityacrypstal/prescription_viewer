@@ -5,7 +5,7 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">search</i>
           <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Search Doctors</label>
+          <label for="autocomplete-input">Search using Id</label>
         </div>
       </div>
     </div>
@@ -21,13 +21,15 @@
     <div class="collapsible-header">
       <i class="material-icons">account_circle</i>
       <?=$doctor['fname']?>
-      <span class="badge"><?=$doctor['specialization']?></span></div>
+      <span class="badge"><?='DOC'.$doctor['Id']?></span></div>
     <div class="collapsible-body"><p><b>Address</b>:<?=$doctor['address']?><br>
                                   <b>Gender</b>:<?=$doctor['sex']?><br>
                                   <b>Qualification</b>:<?=$doctor['qualification']?><br>
                                   <b>Specialixation</b>:<?=$doctor['specialization']?><br>
                                   <b>Contact</b>:<?=$doctor['contact']?><br>
-                                  <b>e-mail</b> :<?=$doctor['email']?></p> 
+                                  <b>e-mail</b> :<?=$doctor['email']?><br>
+                                  <b>From</b> :<?=date('h:i',strtotime($doctor['s_from']))?><br>
+                                  <b>To</b> :<?=date('h:i',strtotime($doctor['s_to']))?></p> 
                                     </div>
   </li>
 <?php endforeach;?>

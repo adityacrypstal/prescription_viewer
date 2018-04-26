@@ -35,19 +35,18 @@
 						<label class="active" for="contact">Contact</label>
 					</div>
 				</div>
-        <div class="row">
-					<div class="input-field col m12 s12">
-          <p>
-            <input name="sex" type="radio" id="test1" value="male" >
-             <label for="test1">Male</label>
-          </p>
-					<p>
-            <input name="sex" type="radio" id="test2" value="female" >
-             <label for="test2">Female</label>
-          </p>
+     
 					
-					</div>
-				</div>
+				<p>
+					<input name= "sex" type="radio" id="male"  />
+					<label for="male">Male</label>
+				</p>
+				<p>
+					<input name="sex" type="radio" id="female" />
+					<label for="female">Female</label>
+				</p>
+				<br>	
+					
 				<div class="row">
 					<div class="input-field col m12 s12">
 					<select name="blood">
@@ -110,8 +109,14 @@
 	$(document).ready(function() {
     $('select').material_select();
   });
-
+	$('select').material_select('destroy')
   </script>
-
+<script>
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+	});</script>
+	<script>$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });</script>
 
 </html>

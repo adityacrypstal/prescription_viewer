@@ -17,6 +17,16 @@ class PV extends CI_Model {
         $query=$this->db->get('pharma');
         return $query->result_array();
     }
+    public function getPerson($search){
+        $this->load->database();
+         $query = $this->db->query("SELECT * FROM patient where  Id like '%$search%' ");
+        return $query->result();
+    }
+    public function getPharmaLive($search){
+        $this->load->database();
+         $query = $this->db->query("SELECT * FROM pharma where ( district  like '%$search%' OR area like '%$search%' OR name like '%$search%' OR pin like '%$search%' OR state like '%$search%')");
+        return $query->result();
+    }
     public function get_history($patient){
         $condition = "Patient =" . "'" . $patient .  "'";
         $this->db->select('*');
