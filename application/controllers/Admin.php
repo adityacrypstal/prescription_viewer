@@ -41,14 +41,14 @@ class Admin extends CI_Controller {
 				redirect('admin/view/');
 			}elseif($doctor!=NULL){
 				foreach($doctor as $doctors){
-					$username= $doctors['username'];
+					$username= $doctors['Id'];
 				}
 				$this->session->set_userdata(array('username'=>$username));
 				redirect('Doctor/view/');
 
 			}elseif($pharma!=NULL){
 				foreach($pharma as $pharmas){
-					$username= $pharmas['username'];
+					$username= $pharmas['Id'];
 				}
 				$this->session->set_userdata(array('username'=>$username));
 				redirect('Pharma/view/');
@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
 			}elseif($patient!=NULL){
 
 				foreach($patient as $patients){
-					$username= $patients['username'];
+					$username= $patients['Id'];
 				}
 				$this->session->set_userdata(array('username'=>$username));
 				redirect('Patient/view/');
@@ -73,6 +73,7 @@ class Admin extends CI_Controller {
 					$data['patients']=$this->PV->get_patient_model();
 					$data['doctors']=$this->PV->get_doctor_model();
 					$data['pharmas']=$this->PV->get_pharma();
+					$data['appoints']=$this->PV->get_appoint_admin();
 					$this->load->view('admin/header');
 					$this->load->view('admin/'.$page,$data);
 				}else{
@@ -132,12 +133,20 @@ class Admin extends CI_Controller {
 			$data['patient']=$this->uri->segment(3);
 			$data['doctor']=$this->uri->segment(4);
 			$this->db->insert('appoints',$data);
-			redirect('Admin/view/appointments');
+			echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Appointment added sucessfully!');
+    							window.location.href='view/appointments';
+   					 </script>");
+			
 		}
 		public function add_pharma(){
 			$this->load->database();
 			$this->db->insert('pharma',$_POST);
-			redirect('Admin/view/index');
+			echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Pharma added sucessfully!');
+    							window.location.href='view/index';
+   					 </script>");
+			
 		}
 			
 }

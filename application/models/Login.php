@@ -22,7 +22,7 @@ public function __construct	(){
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function login_admin($data){
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "Id =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('admin');
         $this->db->where($condition);
@@ -31,7 +31,7 @@ public function __construct	(){
         return $query->result_array();
     }
     public function login_doctor($data){
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "Id =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('doctor');
         $this->db->where($condition);
@@ -40,7 +40,7 @@ public function __construct	(){
         return $query->result_array();
     }
     public function login_pharma($data){
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "Id =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('pharma');
         $this->db->where($condition);
@@ -49,7 +49,7 @@ public function __construct	(){
         return $query->result_array();
     }
     public function login_patient($data){
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "Id =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('patient');
         $this->db->where($condition);

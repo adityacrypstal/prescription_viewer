@@ -77,8 +77,12 @@ class Doctor extends CI_Controller {
 			}
 		
 			$this->db->where('username', $this->session->userdata('username'));
-			$this->db->update('doctor', $data); 
-			redirect('Doctor/view/profile');
+			$this->db->update('doctor', $data);
+			echo ("<script LANGUAGE='JavaScript'>
+			window.alert('Updated profile sucessfully!');
+					window.location.href='view/profile';
+			</script>");
+		
 		}
 	
 }

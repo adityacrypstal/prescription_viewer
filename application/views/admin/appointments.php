@@ -6,7 +6,7 @@
 	<div class="col m6 push-m3  s12 ">
  <ul class="collection with-header">
  <?php foreach($patients as $patient):?>
-        <li class="collection-item"><div><?=$patient['Id'].'<b> : '.$patient['fname']?></b><a href="<?=base_url('index.php/Admin/view/appoint/'.$patient['fname'].'')?>"  class="secondary-content"><i class="material-icons">add</i></a></div></li>
+        <li class="collection-item"><div><?=$patient['Id'].'<b> : '.$patient['fname']?></b><a href="<?=base_url('index.php/Admin/view/appoint/'.$patient['Id'].'')?>"  class="secondary-content"><i class="material-icons">add</i></a></div></li>
 <?php endforeach;?>    
       </ul>
     </div>

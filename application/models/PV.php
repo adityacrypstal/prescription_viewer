@@ -37,7 +37,7 @@ class PV extends CI_Model {
         return $query->result_array();
     }
     public function get_appoints($data){
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('doctor');
         $this->db->where($condition);
@@ -46,7 +46,7 @@ class PV extends CI_Model {
         if ($query->num_rows()>0){
             foreach($query->result() as $row)
             {
-               $doctor= $row->fname;
+               $doctor= $row->Id;
             }
         }
         $condition1 = "Doctor =" . "'" . $doctor .  "'";
@@ -55,9 +55,15 @@ class PV extends CI_Model {
         $query1=$this->db->get('appoints');
         return $query1->result_array();
     }
+    public function get_appoint_admin(){
+        $this->db->select('*');
+        $this->db->from('appoints');
+        $query = $this->db->get();
+        return $query->result_array();
+     }
     public function get_profile($data){
        
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('patient');
         $this->db->where($condition);
@@ -68,7 +74,7 @@ class PV extends CI_Model {
     }
     public function appointed($patient){
        
-        $condition = "fname =" . "'" . $patient .  "'";
+        $condition = "Id =" . "'" . $patient .  "'";
         $this->db->select('*');
         $this->db->from('patient');
         $this->db->where($condition);
@@ -79,7 +85,7 @@ class PV extends CI_Model {
     }
     public function get_profile_doctor($data){
        
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('doctor');
         $this->db->where($condition);
@@ -90,7 +96,7 @@ class PV extends CI_Model {
     }
     public function get_profile_pharma($data){
        
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('pharma');
         $this->db->where($condition);
@@ -100,7 +106,7 @@ class PV extends CI_Model {
     
     }
     public function get_my_presc($data){
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('patient');
         $this->db->where($condition);
@@ -109,7 +115,7 @@ class PV extends CI_Model {
         if ($query->num_rows()>0){
             foreach($query->result() as $row)
             {
-               $patient= $row->fname;
+               $patient= $row->Id;
             }
         }
         $condition1 = "Patient =" . "'" . $patient .  "'";
@@ -125,7 +131,7 @@ class PV extends CI_Model {
         redirect('Patient/view/index');
     }
     public function get_med_list($data){
-        $condition = "username =" . "'" . $data['username'] .  "'";
+        $condition = "Id =" . "'" . $data['username'] .  "'";
         $this->db->select('*');
         $this->db->from('Pharma');
         $this->db->where($condition);

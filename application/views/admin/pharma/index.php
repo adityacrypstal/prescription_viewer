@@ -45,7 +45,7 @@
   </div>
   <div class="modal-footer">
     <a href="<?=base_url('index.php/Pharma/not_available/'.$list['Id'].'')?>" class="modal-action modal-close waves-effect waves-green btn-flat ">Not Available</a>
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Shipped</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Available</a>
   </div>
 </div>
 <?php endforeach;?>

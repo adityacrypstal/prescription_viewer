@@ -29,6 +29,7 @@
       <li class="<?php echo ($page == "list_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_patient')?>">List Patient</a></li>
       <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appoint</a></li>
       <li class="<?php echo ($page == "pharmacies" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/pharmacies')?>">Pharmacies</a></li>
+      <li class="<?php echo ($page == "prescribe" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/prescribe')?>">Appointments</a></li>
       <li ><a href="<?=base_url('index.php/Admin/logout')?>">Logout</a></li> 
       </ul>
       <ul class="side-nav flow-text" id="mobile-demo">
@@ -39,6 +40,7 @@
       <li class="<?php echo ($page == "list_patient" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/list_patient')?>">List Patient</a></li>
       <li class="<?php echo ($page == "appointments" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/appointments')?>">Appoint</a></li>
       <li class="<?php echo ($page == "pharmacies" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/pharmacies')?>">Pharmacies</a></li>
+      <li class="<?php echo ($page == "prescribe" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/view/prescribe')?>">Appointments</a></li>
       <li ><a href="<?=base_url('index.php/Admin/logout')?>">Logout</a></li> 
       </ul>
       </ul>

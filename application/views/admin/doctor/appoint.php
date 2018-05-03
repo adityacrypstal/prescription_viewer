@@ -28,7 +28,7 @@
            <input type="time" name="Time" value="20" hidden>
            <input type="text" name="Dosage" placeholder="Dosage in Days">
            <input type="text" name="Volume" placeholder="Quantity">
-           <input type="text" name="Patient" value="<?=$app['fname']?>" hidden>
+           <input type="text" name="Patient" value="<?=$app['Id']?>" hidden>
            <input type="text" name="Time" value="<?=date('m/d/Y h:i:s a', time());?>" hidden>
            <input type="text" name="Doctor" value="<?=$_SESSION['username']?>" hidden>
            

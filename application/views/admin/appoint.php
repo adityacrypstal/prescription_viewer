@@ -9,8 +9,8 @@
     
 	<div class="col m6 push-m3  s12 ">
  <ul class="collection with-header">
- <?php foreach($doctors as $doctor):?>
-        <li class="collection-item"><div><?=$doctor['fname']?><a href="<?=base_url('index.php/Admin/appoint/'.$page.'/'.$doctor['fname'].'')?>" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+<?php foreach($doctors as $doctor):?>
+        <li class="collection-item"><div><?=$doctor['fname']?><a href="<?=base_url('index.php/Admin/appoint/'.$page.'/'.$doctor['Id'].'')?>" class="secondary-content"><i class="material-icons">add</i></a></div></li>
 <?php endforeach;?>    
       </ul>
     </div>
