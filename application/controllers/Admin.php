@@ -135,7 +135,7 @@ class Admin extends CI_Controller {
 			$this->db->insert('appoints',$data);
 			echo ("<script LANGUAGE='JavaScript'>
     					window.alert('Appointment added sucessfully!');
-    							window.location.href='view/appointments';
+    							window.location.href='".base_url('index.php/Admin/view/appointments')."';
    					 </script>");
 			
 		}

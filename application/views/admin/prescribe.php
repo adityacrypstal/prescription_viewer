@@ -8,7 +8,7 @@
        
         
         <?php foreach($appoints as $appoint):?>
-        <li class="collection-item"><div><?=$appoint['Patient']?><a href="<?=base_url('index.php/Doctor/view/appoint/'.$appoint['Patient'].'')?>" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+        <li class="collection-item"><div><?=$appoint['Patient']?><a href="#" class="secondary-content"><i class="material-icons">add</i></a></div></li>
         <?php endforeach;?>
 
       </ul>

@@ -45,6 +45,11 @@
     $('.collapsible').collapsible();
   });
   </script>
-
+  
+  <script>
+$(document).ready(function(){
+  $('.dropdown-trigger').dropdown();
+});
+</script>
 
 </html>
