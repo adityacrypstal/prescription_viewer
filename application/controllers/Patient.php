@@ -31,7 +31,8 @@ class Patient extends CI_Controller {
 				$data['doctors']=$this->PV->get_doctor_model();
 				$data['pharmas']=$this->PV->get_pharma();
 				$data['profiles']=$this->PV->get_profile($data);
-                $this->load->view('admin/patient/header');
+				$data['notifications']=$this->PV->get_notification();
+                $this->load->view('admin/patient/header',$data);
                 $this->load->view('admin/patient/'.$page,$data);
             }else{
                 
@@ -64,4 +65,14 @@ class Patient extends CI_Controller {
 		$this->PV->set_pharma($data);
 
 	}
+	public function liveNotification(){
+		$result=$this->PV->get_notification();
+		echo json_encode($result);
+	}
+	public function remove_notification()
+	{
+		$id=$this->uri->segment(3);
+		$this->db->query("DELETE  FROM notification WHERE  Id = $id ");
+		redirect('Patient/view');
+	}	
 }

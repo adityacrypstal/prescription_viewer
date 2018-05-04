@@ -62,15 +62,19 @@ class Pharma extends CI_Controller {
 		redirect('Pharma/view/index');
 	}
 	public function not_available(){
-	if($_POST['status']=='not_available'){
+	if($_POST['current']=='not_available'){
 		$this->PV->not_available($_POST['id_no']);
-		$data['status']=$_POST['status'];
-		$data['message']=$_POST['message'];
+		$data['status']=Null;
+		if($_POST['message']!=NULL){
+			$data['message']=$_POST['message'];	
+		}else{$data['message']=$_POST['current'];}
 		$data['patient_id']=$_POST['patient_id'];
 		$this->db->insert('notification',$data);
 	}else{
-		$data['status']=$_POST['status'];
-		$data['message']=$_POST['message'];
+		$data['status']=Null;
+		if($_POST['message']!=NULL){
+			$data['message']=$_POST['message'];	
+		}else{$data['message']=$_POST['current'];}
 		$data['patient_id']=$_POST['patient_id'];
 		$this->db->insert('notification',$data);
 		redirect('Pharma/view/index');

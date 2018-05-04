@@ -27,8 +27,8 @@
      
       <li class="<?php echo ($page == "index" ? "active" : "")?>"><a href="<?=base_url('index.php/Patient/view/index')?>">Home</a></li>
       <li class="<?php echo ($page == "pharmacies" ? "active" :"")?>"><a href="<?=base_url('index.php/Patient/view/pharmacies')?>">Pharmacies</a></li>
-      <li><a class="dropdown-button " href="#!" data-activates="dropdown2">Notification
-      <span class="new badge red">4</span></a></li>
+      <li><a class="dropdown-button " href="#!"  data-activates="dropdown2">Notification
+      <span class="new badge red"><?php echo count($notifications)?></span></a></li>
       <li class="<?php echo ($page == "profile" ? "active" : "")?>"><a href="<?=base_url('index.php/Patient/view/profile')?>">Profile</a></li>
       <li class="<?php echo ($page == "logout" ? "active" : "")?>"><a href="<?=base_url('index.php/Admin/logout')?>">Logout</a></li>
       
@@ -46,15 +46,38 @@
     </div>
     
 </nav><br><br>
+
 <ul id="dropdown2" class="dropdown-content">
-  <li><a href="#">Notification 1</a></li>
-  <li><a href="#">Notification 2</a></li>
+  <?php foreach($notifications as $i=>$notify):?>
+    <li><a class="modal-trigger" href="#modal<?=$i?>"><?=$notify['message']?></a></li>
+    
+   
+  <?php endforeach;?>
+
 </ul>
+<?php foreach($notifications as $i=>$notify):?>
+          <div id="modal<?=$i?>" class="modal modal-fixed-footer">
+          <div class="modal-content">
+          <h1><?=$notify['message']?></h1> 
+          
+          </div>
+          <div class="modal-footer">
+              <a href="<?=base_url('index.php/Patient/remove_notification/'.$notify['Id'])?>" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+          </div>
+   
+  <?php endforeach;?>
+
 
 
 </body>
+<!-- <script type="text/javascript" language="javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script> -->
 <script>
-
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
 (function($) {
    $(function() {
 
@@ -64,5 +87,46 @@
 
    }); // end of document ready
  })(jQuery);
-   
+
+
+ $(document).ready(function(){
+     $.ajax({
+            
+            url: "<?php echo base_url(); ?>/index.php/Patient/liveNotification",
+            type: "GET",
+            data:{view:view},
+            dataType:"json",
+            success: function(response){
+              ;
+             $('#dropdown2').html("");
+              var obj = JSON.parse(response);
+              
+              if(obj.length>0){
+                   try{
+                    var notif=[];
+                
+                    $.each(obj, function(i,val){           
+                      notif.push($('<li>').text(val.message));
+                      console.log(notif);
+                    $('#dropdown2').append.apply($('#dropdown2'),notif);
+                       
+                    });
+                    
+                   
+                    }catch(e) {  
+                    alert('Exception while request..');
+                     }  
+              }
+               },
+                error: function(){      
+                     alert('Error while request..');
+                }
+              });
+ });
+
+  
+
+     
+
+
 </script>
