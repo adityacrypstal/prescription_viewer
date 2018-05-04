@@ -85,7 +85,7 @@ function ajaxSearch()
                         item22.push($('<p>').text(val.district + " " + val.contact));
                         item2.push($('<p>').text(val.state + " " + val.pin));
                         item3.push($('<span class="title"><b>').text(val.name));
-                        item4.push($('<a href="<?php echo base_url(); ?>index.php/Patient/Order/<?php echo $page;?>/'+val.Id+'" class="secondary-content">').html('<i class="material-icons">grade</i>'));                   
+                        item4.push($('<a href="#" class="secondary-content">').html('<i class="material-icons">grade</i>'));                   
                          });     
                     $('#kilo').append.apply($('#kilo'), item3);
                     $('#autoSuggestionsList').append.apply($('#autoSuggestionsList'), items);
