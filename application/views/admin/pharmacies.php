@@ -42,6 +42,7 @@
   });
 
   </script>
+  <?php $page='34';?>
     <script type="text/javascript" language="javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script>
 <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script>
 <script>
@@ -77,18 +78,20 @@ function ajaxSearch()
                     var item21=[];
                     var item22=[];
                     var item3=[];
+                    var item4=[];
                     $.each(obj, function(i,val){                                                                                    
                         items.push($('<li class="collection-item avatar" id="kilo">').text(val.name + " " + val.area));
                         item21.push($('<p>').text(val.area ));
                         item22.push($('<p>').text(val.district + " " + val.contact));
                         item2.push($('<p>').text(val.state + " " + val.pin));
                         item3.push($('<span class="title"><b>').text(val.name));
-                    });     
+                        item4.push($('<a href="<?php echo base_url(); ?>index.php/Patient/Order/<?php echo $page;?>/'+val.Id+'" class="secondary-content">').html('<i class="material-icons">grade</i>'));                   
+                         });     
                     $('#kilo').append.apply($('#kilo'), item3);
                     $('#autoSuggestionsList').append.apply($('#autoSuggestionsList'), items);
                     $("#kilo").append('<img src="<?=base_url('assets/img/placeholder.png')?>" alt="" class="circle">');
                    
-                    $("#kilo").append('<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>');
+                    $("#kilo").append.apply($('#kilo'), item4);
                     $('#kilo').append.apply($('#kilo'), item2);
                     $('#kilo').append.apply($('#kilo'), item21);
                     $('#kilo').append.apply($('#kilo'), item22);
