@@ -99,9 +99,6 @@ INSERT INTO `doctor` (`Id`, `username`, `password`, `email`, `fname`, `lname`, `
 (3, 'doctor', 'doctor', 'adityav@gmail.com', 'Aditya', 'Vijayan', '', '2147483647', 'Rajesh Bhavan', 'md', 'mbbs', '09:30:00.000000', '06:30:00.000000'),
 (4, 'vasudev', 'vasudev', 'imvasudec@gmail.com', 'Vasudev ', 'Menon', '', '2147483647', 'Flat No 20,Skyline appartments,Kakkanad,Kochi', 'Ongology', 'MBBS MD', '07:30:00.000000', '10:00:00.000000'),
 (76543, 'adhi', '11111', 'adityavadityav@gmail.com', 'Ajay', 'Devq', 'on', '2147483647', 'Devaki Mansil', 'Physics', 'MBA', '22:45:00.000000', '08:00:00.000000'),
-(76542, 'radha', 'radha', 'radhu@gmail.com', 'RadhaKrishnan', 'R', 'on', '2147483647', 'Radha Bhavan', 'Ongo', 'MBBS', '21:45:00.000000', '07:40:00.000000'),
-(76544, 'zsxdcfgh', 'asdfg', 'asdfghj@asdfb', 'asdfg', 'asdf', 'on', '123456789', 'zsdv', 'asdfg', 'asdfvb', '07:35:00.000000', '17:25:00.000000'),
-(76545, 'asdc', 'asdf', 'asdlsdnlsinl@sadfas', 'Hari', 'Krishnan', 'on', '1234567', 'KKKK', 'asd', 'asd', '00:03:00.000000', '19:35:00.000000'),
 (76546, 'amru', 'amru', 'amruth45@gmail.com', 'Amruth Hari', 'B', 'male', '9494983234', 'Divyam', 'Pediatrician', 'MBBS', '04:45:00.000000', '08:15:00.000000');
 
 -- --------------------------------------------------------
@@ -154,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
 
 INSERT INTO `patient` (`Id`, `fname`, `lname`, `address`, `age`, `blood`, `contact`, `username`, `password`, `email`, `sex`) VALUES
 (76542, 'Aditya', 'Vijayakumar', 'Rajesh Bhavan ,SOornanad NOrth,Anayadi Oo', 21, 'O-', '9567682232', 'adhiwebz', 'doordie', 'adityavadityav@gmail.com', '0'),
-(76543, 'Arun', 'VV', 'LAL bagh', 32, 'O+', '12345', 'adad', 'adad', 'adad@adad', '0'),
+(76543, 'Arun', 'VV', 'LL VILLA', 32, 'O+', '12345', 'adad', 'adad', 'adad@adad', '0'),
 (76544, 'Aswanth', 'Visva', 'KR VIlla', 23, 'O-', '345634342', 'Nll', 'aswanth', 'aswanth@gmail.com', '0');
 
 -- --------------------------------------------------------
@@ -210,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `prescription` (
 --
 
 INSERT INTO `prescription` (`Id`, `Medicine`, `Patient`, `Doctor`, `Time`, `Dosage`, `Volume`, `Pharma`) VALUES
-(2, 'asdfghj', '76542', '76544', '2018-05-08 12:07:13.000000', '40', '400', '2');
+(2, 'medone', '76542', '76544', '2018-05-08 12:07:13.000000', '40', '400', '2');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
