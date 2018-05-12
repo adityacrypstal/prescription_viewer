@@ -14,7 +14,7 @@
       <input type="text" id="search" name="id" class="autocomplete" onkeyup="ajaxSearch();">
       
 
-      <label for="search">Search using Id</label>
+      <label for="search">Search By name</label>
       
     </div>
   </div>
@@ -23,7 +23,7 @@
 <div class="row">
 
 
-<div class="col m12 push-m1  s1lp2 " id="suggestions">
+<div class="col m10 s6 push-m1  s1lp2 " id="suggestions">
 <!-- <table><tr style="text-align:right;"><th>First Name</th><th>Last Name</th><th>Age</th><th>Blood</th><th>Id</th><th>Contact</th></tr></table> -->
 <table id="autoSuggestionsList" style="text-align:right;">
 

@@ -67,7 +67,7 @@ class PV extends CI_Model {
         return $query1->result_array();
     }
     public function get_appoint_admin(){
-        $this->db->select('*,doctor.fname AS drname,patient.fname AS ptname,patient.id AS pid,doctor.id AS did');
+        $this->db->select('*,doctor.fname AS drname,patient.fname AS ptname,patient.id AS pid,doctor.id AS did,appoints.Id AS Id');
         $this->db->from('appoints');
         $this->db->join('patient','patient.id=appoints.patient');
         $this->db->join('doctor','doctor.id=appoints.doctor');

@@ -34,6 +34,7 @@
         <i class="material-icons right">send</i></button></div>
         <input type="text" value="<?=$patient?>" name="Patient" hidden>
         <input type="text" value="<?=$doctor?>" name="Doctor" hidden>
+        <input type="date" name="date" id="inp" hidden>
        <br><br>
        
         </form>
@@ -78,6 +79,7 @@
         'date': input_data,
         '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
         };
+        document.getElementById('inp').setAttribute('value',input_data);
         console.log(input_data);
         if (input_data.length === 0)
         {
@@ -130,6 +132,7 @@
                       for(var i = 0; i < times.length; i++) {
                       var radio = document.createElement('input');
                       var label = document.createElement('label');
+                      
                       radio.type = 'radio';
                       
                       radio.name = 'Time';
