@@ -24,8 +24,8 @@
       
            <tr>
               <td><?=$list['Id']?></td>
-              <td>      <a  class="modal-trigger" href="#modal1"><?=$list['Patient']?></a></td>
-              <td><?=$list['Doctor']?></td>
+              <td>      <a  class="modal-trigger" href="#modal1"><?=$list['Fname']?></a></td>
+              <td><?=$list['Dname']?></td>
               <td><?=date('m/d/Y h:i:s',strtotime($list['Time']))?></td>
               <td>
                       <a class="btn btn-floating btn-small cyan pulse modal-trigger" href="#modal_2" ><i class="material-icons">edit</i></a>

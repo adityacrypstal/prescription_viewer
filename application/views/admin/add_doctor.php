@@ -25,18 +25,18 @@
 					</div>
 				</div>
 				<p>
-					<input name= "sex" type="radio" id="male"  />
-					<label for="male">Male</label>
-				</p>
-				<p>
-					<input name="sex" type="radio" id="female" />
-					<label for="female">Female</label>
-				</p>
-				<br>
+				<input name= "sex" type="radio" id="male" value="male" />
+				<label for="male">Male</label>
+			</p>
+			<p>
+				<input name="sex" type="radio" id="female" value="female" />
+				<label for="female">Female</label>
+			</p>
+			<br>
       <div class="row">
         <div class="input-field col m12 s12">
-          <input id="password" type="number" class="validate" name="contact" required>
-          <label for="password">Contact</label>
+          <input id="contact" type="number" class="validate" name="contact" required>
+          <label for="contact">Contact</label>
         </div>
       </div>
       <div class="row">
@@ -108,7 +108,7 @@
   $('.timepicker').pickatime({
     default: 'now', // Set default time: 'now', '1:30AM', '16:30'
     fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-    twelvehour: false, // Use AM/PM or 24-hour format
+    twelvehour: true, // Use AM/PM or 24-hour format
     donetext: 'OK', // text for done-button
     cleartext: 'Clear', // text for clear-button
     canceltext: 'Cancel', // Text for cancel-button

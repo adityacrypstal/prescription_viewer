@@ -38,7 +38,7 @@
      
 					
 				<p>
-					<input name= "sex" type="radio" id="male"  />
+					<input name="sex" type="radio" id="male"  />
 					<label for="male">Male</label>
 				</p>
 				<p>

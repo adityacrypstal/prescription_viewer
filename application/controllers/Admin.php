@@ -111,11 +111,18 @@ class Admin extends CI_Controller {
 			echo ("<script LANGUAGE='JavaScript'>
     					window.alert('Doctor added sucessfully!');
     							window.location.href='view/add_doctor';
-   					 </script>");
+			   		 </script>");
+			  
 		}
 		public function liveSearch(){
 			$search = $this->input->get('id');
   			$result = $this->PV->getPerson($search);
+  			echo json_encode ($result);
+ 			
+		}
+		public function liveSearch_doctor(){
+			$search = $this->input->get('id');
+  			$result = $this->PV->getPerson_doctor($search);
   			echo json_encode ($result);
  			
 		}
@@ -132,11 +139,13 @@ class Admin extends CI_Controller {
 		public function appoint(){
 			$data['patient']=$this->uri->segment(3);
 			$data['doctor']=$this->uri->segment(4);
+			$data['time']=date('h:i:sa');
 			$this->db->insert('appoints',$data);
 			echo ("<script LANGUAGE='JavaScript'>
     					window.alert('Appointment added sucessfully!');
     							window.location.href='".base_url('index.php/Admin/view/appointments')."';
-   					 </script>");
+			   		 </script>");
+
 			
 		}
 		public function add_pharma(){
@@ -148,5 +157,27 @@ class Admin extends CI_Controller {
    					 </script>");
 			
 		}
-			
+		public function trying(){
+			$date=$_GET['date'];
+			$query=$this->db->query("SELECT * FROM appoints WHERE DATE(date) ='$date'");
+			$ad=$query->result_array();
+			echo json_encode($ad);
+
+		}			
+	public function remove_appoints(){
+	$id=$this->uri->segment(3);
+	$this->db->query('DELETE FROM `appoints`WHERE id ='.$id.'');
+	echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Appointment remove sucessfully!');
+    							window.location.href='".base_url('index.php/Admin/view/prescribe')."';
+			   		 </script>");
+	}	
+	public function submitAppoint(){
+		$this->db->insert('appoints',$_GET);
+		echo ("<script LANGUAGE='JavaScript'>
+    					window.alert('Appointment created sucessfully!');
+    							window.location.href='".base_url('index.php/Admin/view/prescribe')."';
+			   		 </script>");
+
+	}
 }

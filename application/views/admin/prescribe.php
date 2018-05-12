@@ -4,14 +4,15 @@
 
     
 	<div class="col m6 push-m3  s12 ">
- <ul class="collection with-header">
-       
+ <table>
+    <tr><th>Patient</th><th>Doctor</th><th>Time</th><th>Date</th><th>Action</th></tr>  
         
         <?php foreach($appoints as $appoint):?>
-        <li class="collection-item"><div><?=$appoint['Patient']?><a href="#" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+        <tr><td><?=$appoint['ptname'].'('.$appoint['pid'].')'?></td><td><?=$appoint['drname'].'('.$appoint['did'].')'?></td><td><?=date('h:i',strtotime($appoint['Time']))?></td><td><?=date('d/m/Y',strtotime($appoint['date']))?></td><td><a href="<?=base_url('/index.php/Admin/remove_appoints/'.$appoint['Id'].'')?>">REMOVE</a></td></tr>
+
         <?php endforeach;?>
 
-      </ul>
+  </table>
     </div>
   </div>
 
