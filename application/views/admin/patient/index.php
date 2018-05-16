@@ -6,7 +6,7 @@
     <?php foreach($presc as $prescription):?>
     <li>
       <div class="collapsible-header"><i class="material-icons">local_pharmacy</i><?=$prescription['Medicine']?></div>
-      <div class="collapsible-body"><span><p ><b>Doctor</b>: <span style="text-transform:uppercase"><?=$prescription['Doctor']?></span></p>
+      <div class="collapsible-body"><span><p ><b>Doctor</b>: <span style="text-transform:uppercase"><?=$prescription['dname']?></span></p>
                                              <p><b>Dosage</b>: <?=$prescription['Dosage']?></p>
                                              <p><b>Qty</b>: <?=$prescription['Volume']?></p>
                                             <p><a href="<?=base_url('index.php/Patient/Select/'.$prescription['Id'])?>"><button class="btn waves-effect waves-light" <?=($prescription['Pharma']== Null ? "" : "disabled")?> >Order</button></a></p></span></div>

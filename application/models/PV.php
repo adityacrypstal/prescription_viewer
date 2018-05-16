@@ -132,7 +132,9 @@ class PV extends CI_Model {
             }
         }
         $condition1 = "Patient =" . "'" . $patient .  "'";
-        $this->db->order_by("Id");
+        $this->db->select('*,doctor.fname AS dname');
+        // $this->db->order_by("Id");
+        $this->db->join('doctor','prescription.doctor=doctor.id');
         $this->db->where($condition1);
         $query1=$this->db->get('prescription');
         return $query1->result_array();
