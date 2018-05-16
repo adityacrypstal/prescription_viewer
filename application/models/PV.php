@@ -57,7 +57,7 @@ class PV extends CI_Model {
        
         $date=date("Y/m/d");
          
-        $this->db->select('*');
+        $this->db->select('*,appoints.patient AS pid');
         $this->db->from('appoints');
         $this->db->join('patient','appoints.patient=patient.id');
         // $this->db->join('doctor','prescription.doctor=doctor.id');
