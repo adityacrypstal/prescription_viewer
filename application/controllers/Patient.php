@@ -51,7 +51,7 @@ class Patient extends CI_Controller {
 		{
 			$data['contact']=$_POST['contact'];
 		}
-		$this->db->where('username', $this->session->userdata('username'));
+		$this->db->where('Id', $this->session->userdata('username'));
 		$this->db->update('patient', $data); 
 		redirect('Patient/view/profile');
 	}

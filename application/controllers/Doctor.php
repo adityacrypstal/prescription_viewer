@@ -50,11 +50,32 @@ class Doctor extends CI_Controller {
 
 		}
 		public function prescribe(){
-			$this->db->insert('prescription',$_POST);
+			
+			if(isset($_POST['action'])){
+			$data['Medicine']=$_POST['Medicine'];
+			$data['Time']=$_POST['Time'];
+			$data['Dosage']=$_POST['Dosage'];
+			$data['Volume']=$_POST['Volume'];
+			$data['Patient']=$_POST['Patient'];
+			$data['Time']=$_POST['Time'];
+			$data['Doctor']=$_POST['Doctor'];
+			$this->db->insert('prescription',$data);
+			redirect('Doctor/view/appoint/'.$data['Patient']);
+			}elseif(isset($_POST['submit']))
+			{
+				$data['Medicine']=$_POST['Medicine'];
+				$data['Time']=$_POST['Time'];
+				$data['Dosage']=$_POST['Dosage'];
+				$data['Volume']=$_POST['Volume'];
+				$data['Patient']=$_POST['Patient'];
+				$data['Time']=$_POST['Time'];
+				$data['Doctor']=$_POST['Doctor'];
+			$this->db->insert('prescription',$data);
 			$patient=$this->input->post('Patient');
 			$this->db->where('Patient', $patient);
       		$this->db->delete('appoints'); 
 			redirect('Doctor/view/prescribe');
+			}
 		}
 		public function edit_profile_doctor(){
 			if(NULL!=$_POST['password']){
@@ -76,7 +97,7 @@ class Doctor extends CI_Controller {
 				$data['s_to']=$_POST['s_to'];
 			}
 		
-			$this->db->where('username', $this->session->userdata('username'));
+			$this->db->where('Id', $this->session->userdata('username'));
 			$this->db->update('doctor', $data);
 			echo ("<script LANGUAGE='JavaScript'>
 			window.alert('Updated profile sucessfully!');

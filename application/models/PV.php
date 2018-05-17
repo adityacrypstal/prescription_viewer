@@ -184,7 +184,7 @@ class PV extends CI_Model {
     public function get_notification(){
         $username=$this->session->userdata('username');
         $this->load->database();
-         $query = $this->db->query("SELECT * FROM notification where  patient_id = $username");
+         $query = $this->db->query("SELECT *,pharma.name AS medstore FROM notification JOIN pharma ON notification.Pharma=Pharma.Id where  patient_id = $username");
         return $query->result_array();
         
     }

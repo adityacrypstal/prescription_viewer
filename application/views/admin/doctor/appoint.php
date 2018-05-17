@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="hide-on-large-only"><hr><p class="center-align" style="padding-top:10px;">Prescribe here</p></div>
-        
+        <?php $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);?>
         <div class="col s12 m5 " id="hide">
            <form action="<?=base_url('index.php/Doctor/prescribe')?>" method="post">
            <textarea name="Medicine" id="Medicine" cols="10" rows="40"></textarea>
@@ -29,11 +29,15 @@
            <input type="text" name="Dosage" placeholder="Dosage in Days">
            <input type="text" name="Volume" placeholder="Quantity">
            <input type="text" name="Patient" value="<?=$app['Id']?>" hidden>
-           <input type="text" name="Time" value="<?=date('m/d/Y h:i:s a', time());?>" hidden>
+         
+           <input type="text" name="Time" value="<?=date('m/d/Y').date(H:i);?>" hidden>
            <input type="text" name="Doctor" value="<?=$_SESSION['username']?>" hidden>
            
-
-           <button class="btn waves-effect  purple darken-3" type="submit" action="submit">Submit
+          
+           <button class="btn waves-effect  purple darken-3" type="submit" action="submit" name="submit" value="submit">Submit
+             <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect  purple darken-3" type="submit" action="submit" name="action" value="action">Add another
              <i class="material-icons right">send</i>
             </button>
            </form>

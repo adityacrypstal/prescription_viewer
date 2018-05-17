@@ -49,7 +49,7 @@
 
 <ul id="dropdown2" class="dropdown-content">
   <?php foreach($notifications as $i=>$notify):?>
-    <li><a class="modal-trigger" href="#modal<?=$i?>"><?=$notify['message']?></a></li>
+    <li style="font-size:1px;"><a class="modal-trigger" href="#modal<?=$i?>"><?=$notify['message']?></a></li>
     
    
   <?php endforeach;?>
@@ -58,8 +58,8 @@
 <?php foreach($notifications as $i=>$notify):?>
           <div id="modal<?=$i?>" class="modal modal-fixed-footer">
           <div class="modal-content">
-          <h1><?=$notify['message']?></h1> 
-          
+          <h3><?=$notify['message']?></h3> 
+          <br><p> Message from:<?=$notify['medstore']?></p>
           </div>
           <div class="modal-footer">
               <a href="<?=base_url('index.php/Patient/remove_notification/'.$notify['Id'])?>" class="modal-close waves-effect waves-green btn-flat">Close</a>
