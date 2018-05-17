@@ -151,10 +151,13 @@ class Admin extends CI_Controller {
 		public function add_pharma(){
 			$this->load->database();
 			$this->db->insert('pharma',$_POST);
+			$this->db->trans_complete();
+			$Id = $this->db->insert_id();
 			echo ("<script LANGUAGE='JavaScript'>
-    					window.alert('Pharma added sucessfully!');
+    					window.alert('Pharma added sucessfully Username is ".$Id." ');
     							window.location.href='view/index';
    					 </script>");
+	
 			
 		}
 		public function trying(){

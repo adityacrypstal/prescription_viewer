@@ -73,6 +73,6 @@ class Patient extends CI_Controller {
 	{
 		$id=$this->uri->segment(3);
 		$this->db->query("DELETE  FROM notification WHERE  Id = $id ");
-		redirect('Patient/view');
+		redirect('Patient/view/index');
 	}	
 }

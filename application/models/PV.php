@@ -132,7 +132,7 @@ class PV extends CI_Model {
             }
         }
         $condition1 = "Patient =" . "'" . $patient .  "'";
-        $this->db->select('*,doctor.fname AS dname');
+        $this->db->select('*,doctor.fname AS dname,Prescription.Id AS Id');
         // $this->db->order_by("Id");
         $this->db->join('doctor','prescription.doctor=doctor.id');
         $this->db->where($condition1);
@@ -141,9 +141,12 @@ class PV extends CI_Model {
     }
     public function set_pharma($data){
         $data1['Pharma']=$data['pharma'];
+    
         $this->db->where('Id',$data['medicin']);
-        $this->db->update('prescription',$data1);
+         $this->db->update('prescription',$data1);
         redirect('Patient/view/index');
+        
+       
     }
     public function get_med_list($data){
         $condition = "Id =" . "'" . $data['username'] .  "'";
@@ -161,7 +164,7 @@ class PV extends CI_Model {
         
        
       
-        $this->db->select('* ,doctor.fname AS Dname,patient.fname AS Fname');
+        $this->db->select('* ,doctor.fname AS Dname,patient.fname AS Fname,Prescription.Id AS Id');
         $this->db->from('prescription');
         $this->db->join('patient','prescription.patient=patient.id');
         $this->db->join('doctor','prescription.doctor=doctor.id');
@@ -172,9 +175,11 @@ class PV extends CI_Model {
     }
     public function not_available($data){
         $datas['Pharma']=Null;
-        $this->db->where('Id',$data['Id']);
+        
+        $this->db->where('Id',$data['id_no']);
         $this->db->update('prescription',$datas);
-        redirect('Pharma/view/index');
+        return true;
+        
     }
     public function get_notification(){
         $username=$this->session->userdata('username');
