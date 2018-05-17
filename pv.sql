@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 12, 2018 at 06:46 PM
+-- Generation Time: May 17, 2018 at 08:37 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `appoints` (
   `Time` time(4) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appoints`
@@ -89,17 +89,7 @@ CREATE TABLE IF NOT EXISTS `doctor` (
   `s_from` time(6) NOT NULL,
   `s_to` time(6) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=76547 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `doctor`
---
-
-INSERT INTO `doctor` (`Id`, `username`, `password`, `email`, `fname`, `lname`, `sex`, `contact`, `address`, `specialization`, `qualification`, `s_from`, `s_to`) VALUES
-(3, 'doctor', 'doctor', 'adityav@gmail.com', 'Aditya', 'Vijayan', '', '2147483647', 'Rajesh Bhavan', 'md', 'mbbs', '09:30:00.000000', '06:30:00.000000'),
-(4, 'vasudev', 'vasudev', 'imvasudec@gmail.com', 'Vasudev ', 'Menon', '', '2147483647', 'Flat No 20,Skyline appartments,Kakkanad,Kochi', 'Ongology', 'MBBS MD', '07:30:00.000000', '10:00:00.000000'),
-(76543, 'adhi', '11111', 'adityavadityav@gmail.com', 'Ajay', 'Devq', 'on', '2147483647', 'Devaki Mansil', 'Physics', 'MBA', '22:45:00.000000', '08:00:00.000000'),
-(76546, 'amru', 'amru', 'amruth45@gmail.com', 'Amruth Hari', 'B', 'male', '9494983234', 'Divyam', 'Pediatrician', 'MBBS', '04:45:00.000000', '08:15:00.000000');
+) ENGINE=MyISAM AUTO_INCREMENT=22400 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -114,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `status` varchar(50) DEFAULT NULL,
   `message` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notification`
@@ -151,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
 
 INSERT INTO `patient` (`Id`, `fname`, `lname`, `address`, `age`, `blood`, `contact`, `username`, `password`, `email`, `sex`) VALUES
 (76542, 'Aditya', 'Vijayakumar', 'Rajesh Bhavan ,SOornanad NOrth,Anayadi Oo', 21, 'O-', '9567682232', 'adhiwebz', 'doordie', 'adityavadityav@gmail.com', '0'),
-(76543, 'Arun', 'VV', 'LL VILLA', 32, 'O+', '12345', 'adad', 'adad', 'adad@adad', '0'),
+(76543, 'Arun', 'VV', 'LAL bagh', 32, 'O+', '12345', 'adad', 'adad', 'adad@adad', '0'),
 (76544, 'Aswanth', 'Visva', 'KR VIlla', 23, 'O-', '345634342', 'Nll', 'aswanth', 'aswanth@gmail.com', '0');
 
 -- --------------------------------------------------------
@@ -174,14 +164,7 @@ CREATE TABLE IF NOT EXISTS `pharma` (
   `area` varchar(50) NOT NULL,
   `pin` int(6) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pharma`
---
-
-INSERT INTO `pharma` (`Id`, `username`, `password`, `email`, `name`, `licence`, `contact`, `state`, `district`, `area`, `pin`) VALUES
-(2, 'pharma', 'pharma', 'adityav@gmail.com', 'RV meds', 'klam4554', 12345678, 'Kerala', 'Kollam', 'Sooranad', 690561);
+) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -207,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `prescription` (
 --
 
 INSERT INTO `prescription` (`Id`, `Medicine`, `Patient`, `Doctor`, `Time`, `Dosage`, `Volume`, `Pharma`) VALUES
-(2, 'medone', '76542', '76544', '2018-05-08 12:07:13.000000', '40', '400', '2');
+(2, 'asdfghj', '76542', '76544', '2018-05-08 12:07:13.000000', '40', '400', '2');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
