@@ -10,7 +10,7 @@
  <div class="row"> 
  <p class="center-align flow-text ">Doctor Available <b><?=$slotted?></b></p>
   
-    <div class="input-field col s2 offset-s5">
+    <div class="input-field col s4 offset-s4">
       
     
       <i class="material-icons prefix">event</i>

@@ -55,6 +55,7 @@
                  </div>
                  <input type="text" value="<?=$list['Patient']?>" name="patient_id" hidden> 
                  <input type="text" value="<?=$list['Id']?>" name="id_no" hidden>
+                 <input type="text" value="<?=$list['Medicine']?>" name="medicine" hidden>
                  <select name="current" id="status" class="browser-default" >
                   
                   <option value="not_available">Not Available</option>

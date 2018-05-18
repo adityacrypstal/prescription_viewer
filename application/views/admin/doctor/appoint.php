@@ -24,13 +24,13 @@
         <?php $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);?>
         <div class="col s12 m5 " id="hide">
            <form action="<?=base_url('index.php/Doctor/prescribe')?>" method="post">
-           <textarea name="Medicine" id="Medicine" cols="10" rows="40"></textarea>
+           <textarea name="Medicine" id="Medicine" cols="10" rows="40" required></textarea>
            <input type="time" name="Time" value="20" hidden>
            <input type="text" name="Dosage" placeholder="Dosage in Days">
            <input type="text" name="Volume" placeholder="Quantity">
            <input type="text" name="Patient" value="<?=$app['Id']?>" hidden>
          
-           <input type="text" name="Time" value="<?=date('m/d/Y').date(H:i);?>" hidden>
+           <input type="text" name="Time" value="<?=date('m/d/Y').date('H:i');?>" hidden>
            <input type="text" name="Doctor" value="<?=$_SESSION['username']?>" hidden>
            
           

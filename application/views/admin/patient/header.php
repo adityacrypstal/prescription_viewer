@@ -59,6 +59,7 @@
           <div id="modal<?=$i?>" class="modal modal-fixed-footer">
           <div class="modal-content">
           <h3><?=$notify['message']?></h3> 
+          <br><p>For:<?=$notify['medicine']?></p>
           <br><p> Message from:<?=$notify['medstore']?></p>
           </div>
           <div class="modal-footer">

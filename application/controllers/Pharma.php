@@ -70,6 +70,7 @@ class Pharma extends CI_Controller {
 			$data['message']=$_POST['message'];		
 		}else{$data['message']=$_POST['current'];}
 		$data['patient_id']=$_POST['patient_id'];
+		$data['medicine']=$_POST['medicine'];
 		$data['Pharma']=$this->session->userdata('username');
 		$this->db->insert('notification',$data);
 		redirect('Pharma/view/index');
@@ -80,6 +81,7 @@ class Pharma extends CI_Controller {
 			$data['message']=$_POST['message'];	
 		}else{$data['message']=$_POST['current'];}
 		$data['patient_id']=$_POST['patient_id'];
+		$data['medicine']=$_POST['medicine'];
 		$data['Pharma']=$this->session->userdata('username');
 		$this->db->insert('notification',$data);
 		redirect('Pharma/view/index');

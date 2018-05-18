@@ -18,7 +18,7 @@
 <div class="row">
 
 
-<div class="col m12 push-m1  s1lp2 " id="suggestions">
+<div class="col m12 push-m1  s1lp2 s10" id="suggestions">
 <!-- <table><tr style="text-align:right;"><th>First Name</th><th>Last Name</th><th>Age</th><th>Blood</th><th>Id</th><th>Contact</th></tr></table> -->
 <table id="autoSuggestionsList" style="text-align:right;">
 
@@ -62,7 +62,7 @@ else
                 $.each(obj, function(i,val){  
                   // var time=val.s_from;
                   // time.setMilliseconds(0);        
-                  trHTML += '<tr><td>' + val.fname + '</td><td>' + val.lname + '</td><td>' + val.sex+'</td><td>' + val.email  + '</td><td>' + val.Id +'</td><td>' + val.contact+'</td><td>' + val.specialization+'</td><td>' + val.qualification+'</td><td>' + val.s_from+'to'+val.s_to+'</td></tr>';
+                  trHTML += '<tr><td>' + val.fname + '</td><td>' + val.lname + '</td><td>' + val.sex+'</td><td>' + val.email  + '</td><td>' + val.Id +'</td><td>' + val.contact+'</td><td>' + val.specialization+'</td><td>' + val.qualification+'</td><td>' + val.s_from.slice(0,5)+' to'+val.s_to.slice(0,5)+'</td></tr>';
                    });
                    trHTML2 += '<tr><th>' + 'First Name' + '</th><th>' + 'Second Name' + '</th><th>' + 'Sex'+'</th><th>' +'e-mail'  + '</th><th>' + 'Id' +'</th><th>' + 'Contact'+'</th><th>' + 'Specialization'+'</th><th>' + 'Qualification'+'</th><th>' + 'Shift'+'</th></th>';
                    $('#autoSuggestionsList').append(trHTML2);
