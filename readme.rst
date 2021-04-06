@@ -4,10 +4,10 @@ Prescription Viewer :syringe:
 
 Web App built in Codeigniter for managing prescriptions of patients in Hospitals/Clinics.
 
-:white_check_mark: View Prescriptions Remotely
-:white_check_mark: Transfer Prescriptions to multiple hospitals
-:white_check_mark: Order Medicines from nearby medical stores.
-:white_check_mark: Immutable data to protect from edits/updates.
+ :white_check_mark: View Prescriptions Remotely
+ :white_check_mark: Transfer Prescriptions to multiple hospitals
+ :white_check_mark: Order Medicines from nearby medical stores.
+ :white_check_mark: Immutable data to protect from edits/updates.
 
 
 *******************
