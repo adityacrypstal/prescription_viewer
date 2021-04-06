@@ -1,8 +1,8 @@
 ###################
-Prescrption Viewer
+Prescription Viewer
 ###################
 
-Web App built in Codeigniter for managing prescriptions in hospitals/Clinics.
+Web App built in Codeigniter for managing prescriptions in Hospitals/Clinics.
 
 
 *******************
